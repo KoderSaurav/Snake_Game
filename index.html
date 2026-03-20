@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Snake Game</title>
+    <meta name="description" content="A modern, aesthetic Snake game built with HTML, CSS, and JavaScript.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <div>
+                <span class="score-label">Score</span>
+                <span id="score" class="score-value">0</span>
+            </div>
+            <button id="settingsBtn" class="icon-btn" aria-label="Settings" title="Settings">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            </button>
+            <div>
+                <span class="score-label">High Score</span>
+                <span id="highScore" class="score-value">0</span>
+            </div>
+        </div>
+        
+        <div class="canvas-wrapper">
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+            
+            <div id="gameOverScreen" class="overlay hidden">
+                <h1 class="game-over-title">Game Over</h1>
+                <p class="final-score">Score: <span id="finalScore">0</span></p>
+                <button id="restartBtn" class="primary-btn">Play Again</button>
+            </div>
+
+            <div id="startScreen" class="overlay">
+                <h1 class="start-title">Snake</h1>
+                <p class="start-subtitle">Use Arrow Keys or WASD to move</p>
+                <button id="startBtn" class="primary-btn primary-btn-start">Start Game</button>
+            </div>
+
+            <div id="settingsScreen" class="overlay hidden">
+                <h1 class="start-title" style="font-size: 2.5rem;">Settings</h1>
+                <div class="settings-form">
+                    <div class="setting-group">
+                        <label for="speedSelect">Speed</label>
+                        <select id="speedSelect" class="modern-select">
+                            <option value="350">Slow</option>
+                            <option value="250" selected>Normal</option>
+                            <option value="180">Fast</option>
+                            <option value="120">Insane</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label for="snakeColorInput">Snake Color</label>
+                        <input type="color" id="snakeColorInput" class="modern-color" value="#10B981">
+                    </div>
+                    <div class="setting-group">
+                        <label for="foodColorInput">Food Color</label>
+                        <input type="color" id="foodColorInput" class="modern-color" value="#EF4444">
+                    </div>
+                </div>
+                <button id="closeSettingsBtn" class="primary-btn">Save & Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
